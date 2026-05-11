@@ -37,7 +37,7 @@ export default function LogoTicker() {
                       alt={logo.name}
                       width={48}
                       height={48}
-                      className="w-12 h-12 brightness-0 invert opacity-60"
+                      className="w-12 h-12 dark:brightness-0 dark:invert opacity-60 dark:opacity-100"
                     />
                   </div>
                 ))}

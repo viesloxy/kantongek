@@ -12,9 +12,9 @@ const buttonClasses = cva(
         primary:
           "bg-primary text-neutral-900 hover:shadow-lg hover:shadow-primary/30 active:scale-95",
         secondary:
-          "border border-white/20 text-white hover:border-primary hover:text-primary active:scale-95",
+          "border border-neutral-300 dark:border-white/20 text-neutral-900 dark:text-white hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary active:scale-95",
         ghost:
-          "text-white/70 hover:text-primary hover:bg-white/5 active:scale-95",
+          "text-neutral-700 dark:text-white/70 hover:text-primary dark:hover:text-primary hover:bg-black/5 dark:hover:bg-white/5 active:scale-95",
         danger:
           "bg-primary text-neutral-900 hover:shadow-lg hover:shadow-primary/30 active:scale-95",
         success:

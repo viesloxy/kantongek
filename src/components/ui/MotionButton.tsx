@@ -41,7 +41,7 @@ const MotionButton = ({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         className={cn(
-          'bg-transparent group relative h-auto w-auto cursor-pointer rounded-full border border-white/20 overflow-hidden outline-none transition-all duration-300',
+          'bg-transparent group relative h-auto w-auto cursor-pointer rounded-full border border-neutral-300 dark:border-white/20 overflow-hidden outline-none transition-all duration-300',
           disabled && 'opacity-50 cursor-not-allowed',
           classes
         )}
@@ -54,7 +54,7 @@ const MotionButton = ({
         />
         {/* Text layer */}
         <span className="relative z-10 block px-8 py-3.5 text-center text-sm font-medium tracking-tight">
-          <span className={`transition-colors duration-300 ${isHovered ? 'text-black' : 'text-white'}`}>
+          <span className={`transition-colors duration-300 ${isHovered ? 'text-neutral-900' : 'text-neutral-700 dark:text-white'}`}>
             {label}
           </span>
         </span>

@@ -60,7 +60,7 @@ export function StatCard({ icon, label, value, trend, className }: StatCardProps
         )}
       </div>
       <div>
-        <p className="text-white/50 text-sm">{label}</p>
+        <p className="text-sm text-neutral-600 dark:text-white/50">{label}</p>
         <p className="text-2xl font-bold mt-1">{value}</p>
       </div>
     </Card>

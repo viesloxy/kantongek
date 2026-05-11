@@ -36,7 +36,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-transparent" />
 
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-4 text-neutral-900 dark:text-white">
                 Siap Mengelola Keuanganmu?
               </h2>
               <p className="text-base max-w-xl mx-auto mb-8 text-neutral-600 dark:text-white/50">
@@ -44,7 +44,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <MotionButton label="Mulai Sekarang - Gratis" />
-                <MotionButton label="Hubungi Kami" variant="secondary" />
+                <MotionButton label="Hubungi Kami" variant="secondary" showIcon={false} />
               </div>
             </div>
           </motion.div>
