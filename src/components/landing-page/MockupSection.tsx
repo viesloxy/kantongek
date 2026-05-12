@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/Card";
+import { Globe, Smartphone, WifiOff } from "lucide-react";
 
 const mockups = [
   {
@@ -132,15 +133,15 @@ export default function MockupSection() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-900 rounded-lg border border-primary/20">
-                <div className="w-4 h-4 bg-primary/20 rounded" />
+                <Globe className="w-5 h-5 text-primary" />
                 <span className="text-sm text-black dark:text-white">Web App</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-900 rounded-lg border border-black/10 dark:border-white/10">
-                <div className="w-4 h-4 bg-black/10 dark:bg-white/10 rounded" />
+                <Smartphone className="w-5 h-5 text-neutral-600 dark:text-white/50" />
                 <span className="text-sm text-neutral-600 dark:text-white/50">Mobile Responsive</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-900 rounded-lg border border-black/10 dark:border-white/10">
-                <div className="w-4 h-4 bg-black/10 dark:bg-white/10 rounded" />
+                <WifiOff className="w-5 h-5 text-neutral-600 dark:text-white/50" />
                 <span className="text-sm text-neutral-600 dark:text-white/50">Offline Mode</span>
               </div>
             </div>
