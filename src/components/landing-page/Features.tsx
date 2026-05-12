@@ -85,12 +85,10 @@ export default function Features() {
             <motion.div key={feature.title} variants={itemVariants}>
               <Card className="h-full group cursor-pointer p-8 rounded-2xl border-black/5 dark:border-white/5 hover:border-primary/30 transition-all duration-300">
                 <div className="flex flex-col h-full">
-                  {/* Number Indicator */}
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                    <span className="text-sm font-bold text-primary">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                  </div>
+                  {/* Number Indicator - without bar wrapper */}
+                  <span className="text-sm font-bold text-primary mb-6 inline-block">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                   {/* Content */}
                   <h3 className="text-lg font-medium mb-3 tracking-tight">
                     {feature.title}

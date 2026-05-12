@@ -90,7 +90,7 @@ export default function Footer() {
                     alt={social.name}
                     width={20}
                     height={20}
-                    className="dark:brightness-0 dark:invert opacity-70 dark:opacity-100 hover:opacity-100 transition-opacity"
+                    className="brightness-0 opacity-70 dark:brightness-0 dark:invert dark:opacity-100 hover:opacity-100 transition-opacity"
                   />
                 </a>
               ))}

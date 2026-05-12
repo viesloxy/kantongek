@@ -1,14 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Navbar from "@/components/dashboard/Navbar";
-import HeroStats from "@/components/dashboard/HeroStats";
-import MarqueeText from "@/components/dashboard/MarqueeText";
-import Features from "@/components/dashboard/Features";
-import MockupSection from "@/components/dashboard/MockupSection";
-import Testimonials from "@/components/dashboard/Testimonials";
-import Footer from "@/components/dashboard/Footer";
-import LogoTicker from "@/components/dashboard/LogoTicker";
+import Navbar from "@/components/landing-page/Navbar";
+import HeroStats from "@/components/landing-page/HeroStats";
+import MarqueeText from "@/components/landing-page/MarqueeText";
+import Features from "@/components/landing-page/Features";
+import MockupSection from "@/components/landing-page/MockupSection";
+import Testimonials from "@/components/landing-page/Testimonials";
+import Footer from "@/components/landing-page/Footer";
+import LogoTicker from "@/components/landing-page/LogoTicker";
 import MotionButton from "@/components/ui/MotionButton";
 
 export default function Home() {
