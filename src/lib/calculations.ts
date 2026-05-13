@@ -98,7 +98,7 @@ export function getMonthIncome(transactions: Transaction[]): number {
 // Get expense by category
 export function getExpenseByCategory(
   transactions: Transaction[]
-): { category: string; amount: number; emoji: string }[] {
+): { category: string; amount: number; icon: string }[] {
   const expenses = transactions.filter((t) => t.type === "expense");
 
   const categoryMap = new Map<string, number>();
@@ -111,7 +111,7 @@ export function getExpenseByCategory(
   return EXPENSE_CATEGORIES.filter((cat) => categoryMap.has(cat.id)).map((cat) => ({
     category: cat.id,
     amount: categoryMap.get(cat.id) || 0,
-    emoji: cat.emoji,
+    icon: cat.icon,
   }));
 }
 
@@ -219,7 +219,7 @@ export function getCategoryPercentages(
   const total = byCategory.reduce((sum, c) => sum + c.amount, 0);
 
   return byCategory.map((c) => ({
-    label: c.emoji + " " + c.category.charAt(0).toUpperCase() + c.category.slice(1),
+    label: c.category.charAt(0).toUpperCase() + c.category.slice(1),
     value: total > 0 ? Math.round((c.amount / total) * 100) : 0,
     color: categoryColors[c.category] || "#A4D624",
   }));
