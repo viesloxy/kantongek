@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Budget Status Colors */
+    --budget-safe: #4CAF50;
+    --budget-warning: #FF9800;
+    --budget-danger: #FF5252;
+    --budget-exceeded: #B71C1C;
+  }
+
   html {
     scroll-behavior: smooth;
   }
