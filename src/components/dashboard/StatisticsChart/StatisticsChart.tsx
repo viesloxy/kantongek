@@ -281,7 +281,7 @@ export default function StatisticsChart({ className = "" }: StatisticsChartProps
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full">
               {/* Chart type toggle */}
-              <div className="flex bg-black/5 dark:bg-white/10 rounded-full p-1">
+              <div className="flex bg-black/5 dark:bg-white/10 rounded-full p-1 flex-shrink-0">
                 <button
                   onClick={() => setChartType("bar")}
                   className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
@@ -304,11 +304,11 @@ export default function StatisticsChart({ className = "" }: StatisticsChartProps
                 </button>
               </div>
 
-              {/* Time range selector - Segmented control */}
+              {/* Time range selector - Full width on mobile, auto on desktop */}
               <div className="flex bg-black/5 dark:bg-white/10 rounded-full p-1 w-full sm:w-auto">
                 <button
                   onClick={() => setTimeRange("week")}
-                  className={`flex-1 sm:flex-none px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
+                  className={`flex-1 sm:flex-none px-2 sm:px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
                     timeRange === "week"
                       ? "bg-primary text-neutral-900"
                       : "text-neutral-600 dark:text-white/60 hover:text-primary"
@@ -318,7 +318,7 @@ export default function StatisticsChart({ className = "" }: StatisticsChartProps
                 </button>
                 <button
                   onClick={() => setTimeRange("month")}
-                  className={`flex-1 sm:flex-none px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
+                  className={`flex-1 sm:flex-none px-2 sm:px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
                     timeRange === "month"
                       ? "bg-primary text-neutral-900"
                       : "text-neutral-600 dark:text-white/60 hover:text-primary"
@@ -328,7 +328,7 @@ export default function StatisticsChart({ className = "" }: StatisticsChartProps
                 </button>
                 <button
                   onClick={() => setTimeRange("3months")}
-                  className={`flex-1 sm:flex-none px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
+                  className={`flex-1 sm:flex-none px-2 sm:px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
                     timeRange === "3months"
                       ? "bg-primary text-neutral-900"
                       : "text-neutral-600 dark:text-white/60 hover:text-primary"
