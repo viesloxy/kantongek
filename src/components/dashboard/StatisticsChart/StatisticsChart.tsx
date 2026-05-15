@@ -279,12 +279,12 @@ export default function StatisticsChart({ className = "" }: StatisticsChartProps
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
               {/* Chart type toggle */}
               <div className="flex bg-black/5 dark:bg-white/10 rounded-full p-1">
                 <button
                   onClick={() => setChartType("bar")}
-                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
                     chartType === "bar"
                       ? "bg-primary text-neutral-900"
                       : "text-neutral-600 dark:text-white/60 hover:text-primary"
@@ -294,7 +294,7 @@ export default function StatisticsChart({ className = "" }: StatisticsChartProps
                 </button>
                 <button
                   onClick={() => setChartType("pie")}
-                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
                     chartType === "pie"
                       ? "bg-primary text-neutral-900"
                       : "text-neutral-600 dark:text-white/60 hover:text-primary"
@@ -308,7 +308,7 @@ export default function StatisticsChart({ className = "" }: StatisticsChartProps
               <select
                 value={timeRange}
                 onChange={(e) => setTimeRange(e.target.value as TimeRange)}
-                className="bg-transparent border border-black/10 dark:border-white/10 rounded-lg px-3 py-1.5 text-xs text-neutral-600 dark:text-white/60 focus:outline-none focus:border-primary"
+                className="bg-white dark:bg-neutral-900 border border-black/10 dark:border-white/10 rounded-lg px-3 py-2 text-xs text-neutral-600 dark:text-white/60 focus:outline-none focus:border-primary w-full sm:w-auto"
               >
                 <option value="week">Minggu Ini</option>
                 <option value="month">Bulan Ini</option>

@@ -134,7 +134,7 @@ function TransactionsContent() {
       />
 
       {/* Main Content */}
-      <div className="lg:pl-72">
+      <div className="lg:pl-72 min-h-screen flex flex-col">
         {/* Top Bar */}
         <TopBar
           onMenuClick={() => setIsSidebarOpen(true)}
@@ -142,7 +142,7 @@ function TransactionsContent() {
         />
 
         {/* Page Content */}
-        <main className="p-4 lg:p-6 xl:p-8">
+        <main className="flex-1 p-4 lg:p-6 xl:p-8 overflow-hidden">
           {/* Page Header */}
           <motion.div
             className="mb-8"

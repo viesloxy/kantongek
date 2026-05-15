@@ -95,27 +95,27 @@ export default function TransactionFilterBar({
 
   return (
     <motion.div
-      className="sticky top-20 z-40 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-sm border border-black/10 dark:border-white/10 rounded-2xl p-4 mb-6"
+      className="sticky top-20 z-40 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-sm border border-black/10 dark:border-white/10 rounded-2xl p-3 sm:p-4 mb-6 overflow-hidden"
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="flex flex-col lg:flex-row gap-4">
+      <div className="flex flex-col gap-3 sm:gap-4">
         {/* Search Input */}
-        <div className="relative flex-1">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" />
+        <div className="relative w-full">
+          <Search className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-neutral-400" />
           <input
             type="text"
             value={filters.search}
             onChange={handleSearchChange}
             placeholder="Cari transaksi..."
-            className="w-full bg-neutral-100 dark:bg-neutral-800 border-0 rounded-xl pl-12 pr-4 py-3 text-black dark:text-white placeholder-neutral-400 focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+            className="w-full bg-neutral-100 dark:bg-neutral-800 border-0 rounded-xl pl-10 sm:pl-12 pr-10 py-2.5 sm:py-3 text-sm sm:text-base text-black dark:text-white placeholder-neutral-400 focus:ring-2 focus:ring-primary/20 outline-none transition-all"
             aria-label="Cari transaksi"
           />
           {filters.search && (
             <button
               onClick={() => clearFilter("search")}
-              className="absolute right-4 top-1/2 -translate-y-1/2 p-1 rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-700"
+              className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 p-1 rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-700"
               aria-label="Clear search"
             >
               <X className="w-4 h-4 text-neutral-500" />
@@ -123,29 +123,29 @@ export default function TransactionFilterBar({
           )}
         </div>
 
-        {/* Filters Row */}
-        <div className="flex flex-wrap gap-3">
+        {/* Filters Row - Mobile responsive */}
+        <div className="flex flex-col xs:flex-row gap-2 sm:gap-3 overflow-x-auto -mx-1 px-1">
           {/* Type Filter */}
-          <div className="relative">
+          <div className="relative flex-shrink-0">
             <select
               value={filters.type}
               onChange={handleTypeChange}
-              className="appearance-none bg-neutral-100 dark:bg-neutral-800 border-0 rounded-xl px-4 py-3 pr-10 text-black dark:text-white cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors min-w-[140px]"
+              className="appearance-none bg-neutral-100 dark:bg-neutral-800 border-0 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 pr-8 sm:pr-10 text-sm text-black dark:text-white cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors w-full xs:min-w-[120px] sm:min-w-[140px]"
               aria-label="Filter tipe transaksi"
             >
               <option value="">Semua Tipe</option>
               <option value="income">Income</option>
               <option value="expense">Expense</option>
             </select>
-            <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400 pointer-events-none" />
+            <ChevronDown className="absolute right-2.5 sm:right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400 pointer-events-none" />
           </div>
 
           {/* Category Filter */}
-          <div className="relative">
+          <div className="relative flex-shrink-0">
             <select
               value={filters.category}
               onChange={handleCategoryChange}
-              className="appearance-none bg-neutral-100 dark:bg-neutral-800 border-0 rounded-xl px-4 py-3 pr-10 text-black dark:text-white cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors min-w-[160px]"
+              className="appearance-none bg-neutral-100 dark:bg-neutral-800 border-0 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 pr-8 sm:pr-10 text-sm text-black dark:text-white cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors w-full xs:min-w-[130px] sm:min-w-[160px]"
               aria-label="Filter kategori"
             >
               <option value="">Semua Kategori</option>
@@ -155,25 +155,25 @@ export default function TransactionFilterBar({
                 </option>
               ))}
             </select>
-            <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400 pointer-events-none" />
+            <ChevronDown className="absolute right-2.5 sm:right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400 pointer-events-none" />
           </div>
 
           {/* Date Range */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
             <input
               type="date"
               value={filters.startDate}
               onChange={handleStartDateChange}
-              className="bg-neutral-100 dark:bg-neutral-800 border-0 rounded-xl px-4 py-3 text-black dark:text-white cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
+              className="bg-neutral-100 dark:bg-neutral-800 border-0 rounded-xl px-2 sm:px-3 py-2.5 sm:py-3 text-xs sm:text-sm text-black dark:text-white cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors w-[110px] sm:w-auto"
               aria-label="Tanggal mulai"
             />
-            <span className="text-neutral-400">-</span>
+            <span className="text-neutral-400 text-xs">-</span>
             <input
               type="date"
               value={filters.endDate}
               onChange={handleEndDateChange}
               max={new Date().toISOString().split("T")[0]}
-              className="bg-neutral-100 dark:bg-neutral-800 border-0 rounded-xl px-4 py-3 text-black dark:text-white cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
+              className="bg-neutral-100 dark:bg-neutral-800 border-0 rounded-xl px-2 sm:px-3 py-2.5 sm:py-3 text-xs sm:text-sm text-black dark:text-white cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors w-[110px] sm:w-auto"
               aria-label="Tanggal akhir"
             />
           </div>

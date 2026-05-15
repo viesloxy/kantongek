@@ -82,7 +82,7 @@ function DashboardContent({ currentPage }: DashboardContentProps) {
       />
 
       {/* Main Content Area */}
-      <div className="lg:pl-72">
+      <div className="lg:pl-72 min-h-screen flex flex-col">
         {/* Top Bar */}
         <TopBar
           onMenuClick={() => setIsSidebarOpen(true)}
@@ -90,7 +90,7 @@ function DashboardContent({ currentPage }: DashboardContentProps) {
         />
 
         {/* Page Content */}
-        <main className="p-4 lg:p-6 xl:p-8">
+        <main className="flex-1 p-4 lg:p-6 xl:p-8 overflow-hidden">
           {/* Header Section */}
           <DashboardHeader />
 

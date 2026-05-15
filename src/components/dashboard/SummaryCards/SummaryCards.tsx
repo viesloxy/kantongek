@@ -120,10 +120,10 @@ export default function SummaryCards({ className = "" }: SummaryCardsProps) {
               </div>
 
               {/* Label and value */}
-              <p className="text-sm text-neutral-600 dark:text-white/50 mb-1">
+              <p className="text-sm text-neutral-600 dark:text-white/50 mb-1 truncate">
                 {card.label}
               </p>
-              <p className={`text-2xl md:text-3xl font-bold ${card.color}`}>
+              <p className={`text-xl md:text-2xl lg:text-3xl font-bold ${card.color} truncate`}>
                 {card.value}
               </p>
             </div>
