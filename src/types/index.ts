@@ -42,6 +42,8 @@ export interface StreakData {
   lastCheckIn: string;
   longest: number;
   longestDate: string;
+  streakFreezeAvailable: boolean;
+  streakFreezeUsedThisMonth: boolean;
 }
 
 // User Settings
@@ -112,23 +114,37 @@ export const INCOME_CATEGORIES: Category[] = [
 ];
 
 // Badge definitions
+export type BadgeCategory = "transaction" | "savings" | "streak" | "budget" | "goal";
+
 export interface Badge {
   id: string;
   name: string;
   icon: string;
   description: string;
+  category: BadgeCategory;
   requirement: number;
+  unlockedAt?: string | null;
 }
 
 export const BADGES: Badge[] = [
-  { id: "first_trans", name: "First Ngek", icon: "Star", description: "First transaction logged", requirement: 1 },
-  { id: "10x_trans", name: "10x Ngek", icon: "Target", description: "10 transactions logged", requirement: 10 },
-  { id: "50x_trans", name: "50x Ngek", icon: "Target", description: "50 transactions logged", requirement: 50 },
-  { id: "save_100k", name: "Save Rp100k", icon: "Coins", description: "Tabungan mencapai Rp 100.000", requirement: 100000 },
-  { id: "save_500k", name: "Save Rp500k", icon: "Coins", description: "Tabungan mencapai Rp 500.000", requirement: 500000 },
-  { id: "save_1jt", name: "Save Rp1jt", icon: "Banknote", description: "Tabungan mencapai Rp 1.000.000", requirement: 1000000 },
-  { id: "7day_streak", name: "7 Day Streak", icon: "Flame", description: "7 hari streak", requirement: 7 },
-  { id: "30day_streak", name: "30 Day Streak", icon: "Flame", description: "30 hari streak", requirement: 30 },
-  { id: "budget_master", name: "Budget Master", icon: "Target", description: "Semua budget di bawah 100%", requirement: 1 },
-  { id: "full_goal", name: "First Goal", icon: "Gem", description: "Buat 1 savings goal", requirement: 1 },
+  // Transaction Badges
+  { id: "first_trans", name: "First Ngek", icon: "Star", description: "Catat transaksi pertamamu", category: "transaction", requirement: 1 },
+  { id: "10x_trans", name: "10x Ngek", icon: "Target", description: "Catat 10 transaksi", category: "transaction", requirement: 10 },
+  { id: "50x_trans", name: "50x Ngek", icon: "Target", description: "Catat 50 transaksi", category: "transaction", requirement: 50 },
+  { id: "100x_trans", name: "100x Ngek", icon: "Zap", description: "Catat 100 transaksi", category: "transaction", requirement: 100 },
+
+  // Savings Badges
+  { id: "save_100k", name: "Save Rp100k", icon: "Coins", description: "Tabungan mencapai Rp 100.000", category: "savings", requirement: 100000 },
+  { id: "save_500k", name: "Save Rp500k", icon: "Coins", description: "Tabungan mencapai Rp 500.000", category: "savings", requirement: 500000 },
+  { id: "save_1jt", name: "Save Rp1jt", icon: "Banknote", description: "Tabungan mencapai Rp 1.000.000", category: "savings", requirement: 1000000 },
+
+  // Streak Badges
+  { id: "7day_streak", name: "7 Day Streak", icon: "Flame", description: "7 hari streak", category: "streak", requirement: 7 },
+  { id: "30day_streak", name: "30 Day Streak", icon: "Flame", description: "30 hari streak", category: "streak", requirement: 30 },
+
+  // Budget Badges
+  { id: "budget_master", name: "Budget Master", icon: "Shield", description: "Semua budget di bawah 100%", category: "budget", requirement: 1 },
+
+  // Goal Badges
+  { id: "full_goal", name: "First Goal", icon: "Gem", description: "Buat 1 savings goal", category: "goal", requirement: 1 },
 ];

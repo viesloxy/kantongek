@@ -10,6 +10,7 @@ import {
   PiggyBank,
   TrendingUp,
   BarChart3,
+  Flame,
   Settings,
   LogOut,
   X,
@@ -30,6 +31,7 @@ const mainNavItems = [
   { label: "Budget", href: "/dashboard/budget", icon: PiggyBank },
   { label: "Tabungan", href: "/dashboard/savings", icon: TrendingUp },
   { label: "Statistik", href: "/dashboard/stats", icon: BarChart3 },
+  { label: "Streak", href: "/dashboard/gamification", icon: Flame },
 ];
 
 const bottomNavItems = [
@@ -38,12 +40,15 @@ const bottomNavItems = [
 
 export default function Sidebar({ currentPage, isOpen, onClose }: SidebarProps) {
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const { settings } = useDashboard();
 
-  // Handle responsive collapse
+  // Handle responsive collapse and mobile detection
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 1024) {
+      const mobile = window.innerWidth < 1024;
+      setIsMobile(mobile);
+      if (mobile) {
         setIsCollapsed(false); // Mobile mode: always expanded when open
       }
     };
@@ -55,7 +60,7 @@ export default function Sidebar({ currentPage, isOpen, onClose }: SidebarProps) 
 
   // Prevent body scroll when sidebar is open on mobile
   useEffect(() => {
-    if (isOpen && window.innerWidth < 1024) {
+    if (isOpen && isMobile) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
@@ -63,9 +68,7 @@ export default function Sidebar({ currentPage, isOpen, onClose }: SidebarProps) 
     return () => {
       document.body.style.overflow = "";
     };
-  }, [isOpen]);
-
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 1024;
+  }, [isOpen, isMobile]);
 
   return (
     <>
