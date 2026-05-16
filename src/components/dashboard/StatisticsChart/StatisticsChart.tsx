@@ -263,80 +263,80 @@ export default function StatisticsChart({ className = "" }: StatisticsChartProps
     >
       <Card className="rounded-2xl border-black/5 dark:border-white/5" padding="none">
         {/* Header */}
-        <div className="p-6 border-b border-black/5 dark:border-white/10">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                <BarChart3 className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-lg font-medium text-black dark:text-white">
-                  Statistik Pengeluaran
-                </h3>
-                <p className="text-xs text-neutral-500 dark:text-white/40">
-                  Analisis keuangan kamu
-                </p>
-              </div>
+        <div className="p-4 sm:p-6 border-b border-black/5 dark:border-white/10">
+          {/* Title */}
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+              <BarChart3 className="w-5 h-5 text-primary" />
+            </div>
+            <div>
+              <h3 className="text-base sm:text-lg font-medium text-black dark:text-white">
+                Statistik Pengeluaran
+              </h3>
+              <p className="text-xs text-neutral-500 dark:text-white/40">
+                Analisis keuangan kamu
+              </p>
+            </div>
+          </div>
+
+          {/* Controls - stacked on mobile, row on desktop */}
+          <div className="flex flex-col sm:flex-row gap-3">
+            {/* Chart type toggle */}
+            <div className="flex bg-black/5 dark:bg-white/10 rounded-full p-1 w-full sm:w-auto">
+              <button
+                onClick={() => setChartType("bar")}
+                className={`flex-1 sm:flex-none px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
+                  chartType === "bar"
+                    ? "bg-primary text-neutral-900"
+                    : "text-neutral-600 dark:text-white/60 hover:text-primary"
+                }`}
+              >
+                Bar
+              </button>
+              <button
+                onClick={() => setChartType("pie")}
+                className={`flex-1 sm:flex-none px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
+                  chartType === "pie"
+                    ? "bg-primary text-neutral-900"
+                    : "text-neutral-600 dark:text-white/60 hover:text-primary"
+                }`}
+              >
+                Pie
+              </button>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full">
-              {/* Chart type toggle */}
-              <div className="flex bg-black/5 dark:bg-white/10 rounded-full p-1 flex-shrink-0">
-                <button
-                  onClick={() => setChartType("bar")}
-                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
-                    chartType === "bar"
-                      ? "bg-primary text-neutral-900"
-                      : "text-neutral-600 dark:text-white/60 hover:text-primary"
-                  }`}
-                >
-                  Bar
-                </button>
-                <button
-                  onClick={() => setChartType("pie")}
-                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
-                    chartType === "pie"
-                      ? "bg-primary text-neutral-900"
-                      : "text-neutral-600 dark:text-white/60 hover:text-primary"
-                  }`}
-                >
-                  Pie
-                </button>
-              </div>
-
-              {/* Time range selector - Full width on mobile, auto on desktop */}
-              <div className="flex bg-black/5 dark:bg-white/10 rounded-full p-1 w-full sm:w-auto">
-                <button
-                  onClick={() => setTimeRange("week")}
-                  className={`flex-1 sm:flex-none px-2 sm:px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
-                    timeRange === "week"
-                      ? "bg-primary text-neutral-900"
-                      : "text-neutral-600 dark:text-white/60 hover:text-primary"
-                  }`}
-                >
-                  Minggu
-                </button>
-                <button
-                  onClick={() => setTimeRange("month")}
-                  className={`flex-1 sm:flex-none px-2 sm:px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
-                    timeRange === "month"
-                      ? "bg-primary text-neutral-900"
-                      : "text-neutral-600 dark:text-white/60 hover:text-primary"
-                  }`}
-                >
-                  Bulan
-                </button>
-                <button
-                  onClick={() => setTimeRange("3months")}
-                  className={`flex-1 sm:flex-none px-2 sm:px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
-                    timeRange === "3months"
-                      ? "bg-primary text-neutral-900"
-                      : "text-neutral-600 dark:text-white/60 hover:text-primary"
-                  }`}
-                >
-                  3 Bulan
-                </button>
-              </div>
+            {/* Time range selector */}
+            <div className="flex bg-black/5 dark:bg-white/10 rounded-full p-1">
+              <button
+                onClick={() => setTimeRange("week")}
+                className={`flex-1 sm:flex-none px-2 sm:px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
+                  timeRange === "week"
+                    ? "bg-primary text-neutral-900"
+                    : "text-neutral-600 dark:text-white/60 hover:text-primary"
+                }`}
+              >
+                Minggu
+              </button>
+              <button
+                onClick={() => setTimeRange("month")}
+                className={`flex-1 sm:flex-none px-2 sm:px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
+                  timeRange === "month"
+                    ? "bg-primary text-neutral-900"
+                    : "text-neutral-600 dark:text-white/60 hover:text-primary"
+                }`}
+              >
+                Bulan
+              </button>
+              <button
+                onClick={() => setTimeRange("3months")}
+                className={`flex-1 sm:flex-none px-2 sm:px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
+                  timeRange === "3months"
+                    ? "bg-primary text-neutral-900"
+                    : "text-neutral-600 dark:text-white/60 hover:text-primary"
+                }`}
+              >
+                3 Bulan
+              </button>
             </div>
           </div>
         </div>

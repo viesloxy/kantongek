@@ -90,7 +90,7 @@ function GamificationContent() {
                 Quick Stats
               </h3>
               <div className="space-y-4">
-                <div className="flex justify-between items-center p-3 bg-primary/5 rounded-xl">
+                <div className="flex justify-between items-center p-3 bg-neutral-100 dark:bg-neutral-800 rounded-xl">
                   <span className="text-neutral-500 dark:text-white/50">
                     Total Badge
                   </span>
@@ -98,27 +98,27 @@ function GamificationContent() {
                     {isBadgeUnlocked("first_trans") ? "1" : "0"}+
                   </span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-orange-500/5 rounded-xl">
+                <div className="flex justify-between items-center p-3 bg-neutral-100 dark:bg-neutral-800 rounded-xl">
                   <span className="text-neutral-500 dark:text-white/50">
                     Current Streak
                   </span>
-                  <span className="text-xl font-bold text-orange-500">
+                  <span className="text-xl font-bold text-primary">
                     {streakData.current} hari
                   </span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-green-500/5 rounded-xl">
+                <div className="flex justify-between items-center p-3 bg-neutral-100 dark:bg-neutral-800 rounded-xl">
                   <span className="text-neutral-500 dark:text-white/50">
                     Longest Streak
                   </span>
-                  <span className="text-xl font-bold text-green-500">
+                  <span className="text-xl font-bold text-primary">
                     {streakData.longest} hari
                   </span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-blue-500/5 rounded-xl">
+                <div className="flex justify-between items-center p-3 bg-neutral-100 dark:bg-neutral-800 rounded-xl">
                   <span className="text-neutral-500 dark:text-white/50">
                     Freeze Tersedia
                   </span>
-                  <span className="text-xl font-bold text-blue-500">
+                  <span className="text-xl font-bold text-primary">
                     {streakData.streakFreezeAvailable ? "Ya" : "Tidak"}
                   </span>
                 </div>

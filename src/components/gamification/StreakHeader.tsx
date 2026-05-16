@@ -71,8 +71,8 @@ export default function StreakHeader({
     >
       {/* Header */}
       <div className="flex items-center gap-3 mb-6">
-        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center shadow-lg shadow-orange-500/30">
-          <Flame className="w-7 h-7 text-white" />
+        <div className="w-14 h-14 rounded-2xl bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center">
+          <Flame className="w-7 h-7 text-primary" />
         </div>
         <div>
           <h2 className="text-xl font-semibold text-black dark:text-white">
@@ -115,7 +115,7 @@ export default function StreakHeader({
         </div>
         <div className="h-3 bg-neutral-200 dark:bg-neutral-800 rounded-full overflow-hidden">
           <motion.div
-            className="h-full bg-gradient-to-r from-primary to-green-400 rounded-full"
+            className="h-full bg-primary rounded-full"
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
             transition={{ duration: 1, ease: "easeOut" }}

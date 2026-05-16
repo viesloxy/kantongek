@@ -70,7 +70,7 @@ export default function BadgeGrid({
           </div>
           <div className="h-2 bg-neutral-200 dark:bg-neutral-800 rounded-full overflow-hidden">
             <motion.div
-              className="h-full bg-gradient-to-r from-primary to-green-400 rounded-full"
+              className="h-full bg-primary rounded-full"
               initial={{ width: 0 }}
               animate={{ width: `${(unlockedCount / totalCount) * 100}%` }}
               transition={{ duration: 1, ease: "easeOut" }}
