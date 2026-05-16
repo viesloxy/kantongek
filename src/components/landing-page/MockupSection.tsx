@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Card } from "@/components/ui/Card";
 import { Globe, Smartphone, WifiOff } from "lucide-react";
 
@@ -8,18 +9,22 @@ const mockups = [
   {
     title: "Dashboard Intuitive",
     description: "Pantau saldo dan statistik keuanganmu dalam satu tampilan yang bersih dan mudah dipahami",
+    image: "/images/Dashboard Intuitive.svg",
   },
   {
     title: "Pencatatan Cepat",
     description: "Tambahkan transaksi hanya dalam beberapa detik dengan input yang simpel",
+    image: "/images/Pencatatan Cepat.svg",
   },
   {
     title: "Budget Tracking",
     description: "Kelola budget per kategori dengan visualisasi progress yang jelas",
+    image: "/images/Budget Tracking.svg",
   },
   {
     title: "Tabungan Goals",
     description: "Tetapkan dan capai tujuan finansialmu dengan fitur tabungan bertarget",
+    image: "/images/Tabungan Goals.svg",
   },
 ];
 
@@ -48,8 +53,8 @@ export default function MockupSection() {
   };
 
   return (
-    <section className="py-24 bg-neutral-50 dark:bg-black transition-colors duration-300" id="preview">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-16 md:py-24 bg-neutral-50 dark:bg-black transition-colors duration-300" id="preview">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -58,7 +63,7 @@ export default function MockupSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-4">
             Tampilan Aplikasi
           </h2>
           <p className="text-base max-w-2xl mx-auto text-neutral-600 dark:text-white/50">
@@ -72,40 +77,25 @@ export default function MockupSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8"
         >
           {mockups.map((mockup) => (
             <motion.div key={mockup.title} variants={itemVariants}>
               <Card className="overflow-hidden p-0 group rounded-2xl border-black/5 dark:border-white/5" padding="none">
-                {/* Mockup Image Placeholder */}
-                <div className="aspect-[4/3] bg-white dark:bg-neutral-950 flex items-center justify-center relative overflow-hidden">
-                  {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent" />
-
-                  {/* UI Elements Simulation */}
-                  <div className="absolute top-6 left-6 right-6 h-10 bg-neutral-200 dark:bg-neutral-800/50 rounded-lg" />
-                  <div className="absolute top-10 left-6 w-32 h-3 bg-neutral-300 dark:bg-neutral-700/50 rounded" />
-
-                  {/* Main content box */}
-                  <div className="absolute inset-12 border border-neutral-800 rounded-xl" />
-                  <div className="absolute inset-16 border border-neutral-700/50 rounded-lg" />
-
-                  {/* Bottom bars */}
-                  <div className="absolute bottom-12 left-6 right-6 h-16 bg-neutral-200 dark:bg-neutral-800/50 rounded-xl" />
-                  <div className="absolute bottom-6 left-6 right-6 flex gap-3">
-                    <div className="flex-1 h-8 bg-neutral-200 dark:bg-neutral-800/50 rounded-lg" />
-                    <div className="flex-1 h-8 bg-neutral-200 dark:bg-neutral-800/50 rounded-lg" />
-                    <div className="flex-1 h-8 bg-primary/20 rounded-lg" />
-                  </div>
-
-                  {/* Label */}
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-neutral-100 dark:bg-neutral-900 px-4 py-1.5 rounded-full border border-primary/30">
-                    <span className="text-xs text-primary">{mockup.title}</span>
+                {/* Mockup Image */}
+                <div className="bg-neutral-100 dark:bg-neutral-900">
+                  <div className="relative bg-white dark:bg-neutral-950" style={{ minHeight: "200px" }}>
+                    <Image
+                      src={mockup.image}
+                      alt={mockup.title}
+                      fill
+                      className="object-contain"
+                    />
                   </div>
                 </div>
 
                 {/* Description */}
-                <div className="p-6">
+                <div className="p-5">
                   <h3 className="text-lg font-medium mb-2">{mockup.title}</h3>
                   <p className="text-sm leading-relaxed text-neutral-600 dark:text-white/50">
                     {mockup.description}

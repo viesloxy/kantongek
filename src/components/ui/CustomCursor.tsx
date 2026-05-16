@@ -31,8 +31,10 @@ export default function CustomCursor() {
     // Hide default cursor
     const style = document.createElement("style");
     style.textContent = `
-      *, *::before, *::after {
-        cursor: none !important;
+      @media (hover: hover) and (pointer: fine) {
+        *, *::before, *::after {
+          cursor: none !important;
+        }
       }
     `;
     document.head.appendChild(style);

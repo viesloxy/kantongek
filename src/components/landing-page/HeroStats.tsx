@@ -28,21 +28,20 @@ export default function HeroStats() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 py-24 md:py-28" id="home">
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 py-20 md:py-28" id="home">
       <div className="relative w-full max-w-6xl mx-auto">
         {/* Floating Info Bar - Top Left */}
         <motion.div
-          initial={{ opacity: 0, x: -100, y: -50 }}
+          initial={{ opacity: 0, x: -50 }}
           animate={{
             opacity: 1,
             x: 0,
-            y: 0,
           }}
           transition={{
             opacity: { delay: 0.5, duration: 0.8 },
             x: { delay: 0.5, duration: 0.8 },
           }}
-          className="absolute left-0 top-10 hidden lg:block z-10"
+          className="absolute left-0 top-10 hidden xl:block z-10"
         >
           <motion.div
             animate={{
@@ -53,28 +52,27 @@ export default function HeroStats() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="bg-white dark:bg-neutral-900 border border-black/10 dark:border-primary/30 rounded-2xl px-6 py-4 shadow-lg backdrop-blur-sm"
+            className="bg-white dark:bg-neutral-900 border border-black/10 dark:border-primary/30 rounded-2xl px-4 py-3 shadow-lg backdrop-blur-sm"
           >
             <div>
               <p className="text-xs text-neutral-500 dark:text-white/50 mb-1">Total Pengguna</p>
-              <p className="text-2xl font-bold text-primary">500+</p>
+              <p className="text-xl font-bold text-primary">500+</p>
             </div>
           </motion.div>
         </motion.div>
 
         {/* Floating Info Bar - Top Right */}
         <motion.div
-          initial={{ opacity: 0, x: 100, y: -50 }}
+          initial={{ opacity: 0, x: 50 }}
           animate={{
             opacity: 1,
             x: 0,
-            y: 0,
           }}
           transition={{
             opacity: { delay: 0.7, duration: 0.8 },
             x: { delay: 0.7, duration: 0.8 },
           }}
-          className="absolute right-0 top-10 hidden lg:block z-10"
+          className="absolute right-0 top-10 hidden xl:block z-10"
         >
           <motion.div
             animate={{
@@ -85,28 +83,27 @@ export default function HeroStats() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="bg-white dark:bg-neutral-900 border border-black/10 dark:border-primary/30 rounded-2xl px-6 py-4 shadow-lg backdrop-blur-sm"
+            className="bg-white dark:bg-neutral-900 border border-black/10 dark:border-primary/30 rounded-2xl px-4 py-3 shadow-lg backdrop-blur-sm"
           >
             <div>
               <p className="text-xs text-neutral-500 dark:text-white/50 mb-1">Transaksi Tercatat</p>
-              <p className="text-2xl font-bold text-primary">1.2M+</p>
+              <p className="text-xl font-bold text-primary">1.2M+</p>
             </div>
           </motion.div>
         </motion.div>
 
         {/* Floating Info Bar - Bottom Left */}
         <motion.div
-          initial={{ opacity: 0, x: -100, y: 50 }}
+          initial={{ opacity: 0, x: -50 }}
           animate={{
             opacity: 1,
             x: 0,
-            y: 0,
           }}
           transition={{
             opacity: { delay: 0.9, duration: 0.8 },
             x: { delay: 0.9, duration: 0.8 },
           }}
-          className="absolute left-0 bottom-20 hidden lg:block z-10"
+          className="absolute left-0 bottom-20 hidden xl:block z-10"
         >
           <motion.div
             animate={{
@@ -117,28 +114,27 @@ export default function HeroStats() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="bg-white dark:bg-neutral-900 border border-black/10 dark:border-primary/30 rounded-2xl px-6 py-4 shadow-lg backdrop-blur-sm"
+            className="bg-white dark:bg-neutral-900 border border-black/10 dark:border-primary/30 rounded-2xl px-4 py-3 shadow-lg backdrop-blur-sm"
           >
             <div>
               <p className="text-xs text-neutral-500 dark:text-white/50 mb-1">Rating</p>
-              <p className="text-2xl font-bold text-primary">4.9/5</p>
+              <p className="text-xl font-bold text-primary">4.9/5</p>
             </div>
           </motion.div>
         </motion.div>
 
         {/* Floating Info Bar - Bottom Right */}
         <motion.div
-          initial={{ opacity: 0, x: 100, y: 50 }}
+          initial={{ opacity: 0, x: 50 }}
           animate={{
             opacity: 1,
             x: 0,
-            y: 0,
           }}
           transition={{
             opacity: { delay: 1.1, duration: 0.8 },
             x: { delay: 1.1, duration: 0.8 },
           }}
-          className="absolute right-0 bottom-20 hidden lg:block z-10"
+          className="absolute right-0 bottom-20 hidden xl:block z-10"
         >
           <motion.div
             animate={{
@@ -149,11 +145,11 @@ export default function HeroStats() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="bg-white dark:bg-neutral-900 border border-black/10 dark:border-primary/30 rounded-2xl px-6 py-4 shadow-lg backdrop-blur-sm"
+            className="bg-white dark:bg-neutral-900 border border-black/10 dark:border-primary/30 rounded-2xl px-4 py-3 shadow-lg backdrop-blur-sm"
           >
             <div>
               <p className="text-xs text-neutral-500 dark:text-white/50 mb-1">Kepuasan User</p>
-              <p className="text-2xl font-bold text-primary">98%</p>
+              <p className="text-xl font-bold text-primary">98%</p>
             </div>
           </motion.div>
         </motion.div>
@@ -177,7 +173,7 @@ export default function HeroStats() {
           {/* Main Heading */}
           <motion.h1
             variants={itemVariants}
-            className="text-5xl md:text-6xl lg:text-7xl font-medium text-center leading-tight tracking-tight mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-center leading-tight tracking-tight mb-6"
           >
             Kelola Keuanganmu
             <br />

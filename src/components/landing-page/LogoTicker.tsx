@@ -15,12 +15,12 @@ const logos = [
 
 export default function LogoTicker() {
   return (
-    <section className="py-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-16 md:py-24 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <h3 className="text-center text-neutral-600 dark:text-white/50 text-xl mb-12">
           Terintegrasi Dengan Platform Populer
         </h3>
-        <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent_0%,black_5%,black_95%,transparent_100%)]">
+        <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
           <motion.div
             animate={{
               x: "-50%",

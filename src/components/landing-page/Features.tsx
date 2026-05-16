@@ -55,8 +55,8 @@ export default function Features() {
   };
 
   return (
-    <section className="py-24" id="fitur">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-16 md:py-24" id="fitur">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -65,7 +65,7 @@ export default function Features() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-4">
             Semua yang Kamu Butuhkan
           </h2>
           <p className="text-base max-w-2xl mx-auto text-neutral-600 dark:text-white/50">

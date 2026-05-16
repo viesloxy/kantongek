@@ -32,8 +32,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: background-color 0.3s ease, color 0.3s ease;
-    overflow-x: hidden;
-    min-height: 100vh;
   }
 
   /* Ensure fixed elements don't shift on scroll */
@@ -41,10 +39,17 @@
     transform: translateZ(0);
   }
 
+  /* Prevent horizontal overflow */
+  html {
+    overflow-x: hidden;
+  }
+
   /* Default Light Mode */
   body {
     background-color: #ffffff;
     color: #000000;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
 
   /* Selection */
@@ -77,6 +82,8 @@
 html.dark body {
   background-color: #000000;
   color: #ffffff;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 html.dark ::selection {

@@ -52,7 +52,7 @@ export default function MarqueeText() {
           <div key={repeatIndex} className="flex items-center gap-16">
             {marqueeItems.map((item, index) => (
               <div key={`${repeatIndex}-${index}`} className="flex items-center gap-16">
-                <span className="text-3xl md:text-4xl lg:text-5xl font-medium text-neutral-400 dark:text-white/60 group-hover:text-primary transition-colors duration-300">
+                <span className="text-2xl md:text-3xl lg:text-4xl font-medium text-neutral-400 dark:text-white/60 group-hover:text-primary transition-colors duration-300">
                   {item}
                 </span>
               </div>
