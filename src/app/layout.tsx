@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import CustomCursor from "@/components/ui/CustomCursor";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { AuthProvider } from "@/context/AuthContext";
 
@@ -28,7 +27,6 @@ export default function RootLayout({
       <body className={`${poppins.variable} font-sans antialiased`}>
         <ThemeProvider>
           <AuthProvider>
-            <CustomCursor />
             {children}
           </AuthProvider>
         </ThemeProvider>

@@ -28,7 +28,7 @@ export default function HeroStats() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 py-20 md:py-28" id="home">
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 py-8" id="home">
       <div className="relative w-full max-w-6xl mx-auto">
         {/* Floating Info Bar - Top Left */}
         <motion.div
@@ -52,11 +52,11 @@ export default function HeroStats() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="bg-white dark:bg-neutral-900 border border-black/10 dark:border-primary/30 rounded-2xl px-4 py-3 shadow-lg backdrop-blur-sm"
+            className="bg-white dark:bg-neutral-900 border border-black/8 dark:border-white/10 rounded-2xl px-4 py-3 shadow-sm backdrop-blur-sm"
           >
             <div>
               <p className="text-xs text-neutral-500 dark:text-white/50 mb-1">Total Pengguna</p>
-              <p className="text-xl font-bold text-primary">500+</p>
+              <p className="text-xl font-semibold text-neutral-900 dark:text-white">500+</p>
             </div>
           </motion.div>
         </motion.div>
@@ -83,11 +83,11 @@ export default function HeroStats() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="bg-white dark:bg-neutral-900 border border-black/10 dark:border-primary/30 rounded-2xl px-4 py-3 shadow-lg backdrop-blur-sm"
+            className="bg-white dark:bg-neutral-900 border border-black/8 dark:border-white/10 rounded-2xl px-4 py-3 shadow-sm backdrop-blur-sm"
           >
             <div>
               <p className="text-xs text-neutral-500 dark:text-white/50 mb-1">Transaksi Tercatat</p>
-              <p className="text-xl font-bold text-primary">1.2M+</p>
+              <p className="text-xl font-semibold text-neutral-900 dark:text-white">1.2M+</p>
             </div>
           </motion.div>
         </motion.div>
@@ -114,11 +114,11 @@ export default function HeroStats() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="bg-white dark:bg-neutral-900 border border-black/10 dark:border-primary/30 rounded-2xl px-4 py-3 shadow-lg backdrop-blur-sm"
+            className="bg-white dark:bg-neutral-900 border border-black/8 dark:border-white/10 rounded-2xl px-4 py-3 shadow-sm backdrop-blur-sm"
           >
             <div>
               <p className="text-xs text-neutral-500 dark:text-white/50 mb-1">Rating</p>
-              <p className="text-xl font-bold text-primary">4.9/5</p>
+              <p className="text-xl font-semibold text-neutral-900 dark:text-white">4.9/5</p>
             </div>
           </motion.div>
         </motion.div>
@@ -145,11 +145,11 @@ export default function HeroStats() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="bg-white dark:bg-neutral-900 border border-black/10 dark:border-primary/30 rounded-2xl px-4 py-3 shadow-lg backdrop-blur-sm"
+            className="bg-white dark:bg-neutral-900 border border-black/8 dark:border-white/10 rounded-2xl px-4 py-3 shadow-sm backdrop-blur-sm"
           >
             <div>
               <p className="text-xs text-neutral-500 dark:text-white/50 mb-1">Kepuasan User</p>
-              <p className="text-xl font-bold text-primary">98%</p>
+              <p className="text-xl font-semibold text-neutral-900 dark:text-white">98%</p>
             </div>
           </motion.div>
         </motion.div>
@@ -162,9 +162,9 @@ export default function HeroStats() {
           className="flex flex-col items-center text-center w-full"
         >
           {/* Badge */}
-          <motion.div variants={itemVariants} className="mb-8">
-            <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-primary/10 border border-primary/30">
-              <span className="text-xs text-primary font-medium tracking-wider">
+          <motion.div variants={itemVariants} className="mb-6">
+            <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-neutral-200 dark:border-white/10">
+              <span className="text-xs text-neutral-500 dark:text-white/40 font-normal tracking-wide">
                 Gen-Z Finance Tracker
               </span>
             </div>
